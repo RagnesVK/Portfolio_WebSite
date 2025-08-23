@@ -275,14 +275,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   // #endregion
-
-  /*   document.querySelectorAll(".overscroll_x_wrapper").forEach(wrapper => {
-    wrapper.addEventListener("wheel", event => {
-      if (event.target.classList.contains("overscroll_y_wrapper")) {}
-      else {
-        event.preventDefault();
-        wrapper.scrollLeft += event.deltaY;
-      }
-    });
-  }); */
 });
