@@ -3,16 +3,18 @@ name: Deploy Pages Minified
 on:
   push:
     branches:
-      - main  # branch principal que você usa
+      - main
+  workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -20,16 +22,16 @@ jobs:
       - name: Install minify
         run: npm install -g minify
 
-      - name: Copy files to dist
+      - name: Prepare dist folder
         run: |
-          rm -rf dist
-          cp -r . dist
+          mkdir dist
+          rsync -av --exclude='dist' --exclude='.git' --exclude='node_modules' ./ dist/
 
-      - name: Minify everything
+      - name: Minify HTML, CSS, JS
         run: |
           minify "dist/**/*.html" "dist/**/*.css" "dist/**/*.js" --replace
 
-      - name: Deploy to Pages
+      - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
         with:
           path: dist
