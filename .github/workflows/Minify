@@ -1,0 +1,35 @@
+name: Deploy Pages Minified
+
+on:
+  push:
+    branches:
+      - main  # branch principal que você usa
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install minify
+        run: npm install -g minify
+
+      - name: Copy files to dist
+        run: |
+          rm -rf dist
+          cp -r . dist
+
+      - name: Minify everything
+        run: |
+          minify "dist/**/*.html" "dist/**/*.css" "dist/**/*.js" --replace
+
+      - name: Deploy to Pages
+        uses: actions/deploy-pages@v4
+        with:
+          path: dist
