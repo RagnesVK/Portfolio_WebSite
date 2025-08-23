@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Portfólio: Rafael Agnes</title>
+    <link href="../assets/css/styles.css" rel="stylesheet" />
+    <link href="../assets/css/Bricolage Grotesque.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="media_modal">
+        <img>
+        <video></video>
+    </div>
+    <canvas class="background bg_canvas"></canvas>
+    <div class="background bg_filter"></div>
+    <header class="header_wrapper">
+        <div class="header">
+            <h1><a class="link" href="#hero" data-type="not_selectable">Rafael Agnes</a></h1>
+            <nav class="header_nav">
+                <ul>
+                    <li><a class="link" href="#showcase" data-type="not_selectable">Projetos</a></li>
+                    <li><a class="link" href="#portfolio" data-type="not_selectable">Portfólio</a></li>
+                    <li><a class="link" href="#about" data-type="not_selectable">Sobre</a></li>
+                </ul>
+            </nav>
+            <div class="header_btn_wrapper">
+                <button class="header_btns" type="button" data-type="not_selectable">Contato</button>
+                <button class="header_btns header_dropdown_btn" type="button" data-type="not_selectable">
+                    <svg class="arrow_down_icon">
+                        <!-- import the symbol "arrow_down" from the sprites.svg file -->
+                        <use xlink:href="./assets/sprites.svg#arrow_down" href="../assets/sprites.svg#arrow_down"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="header_hidden_menu">
+            <nav class="hidden_menu_nav">
+                <ul>
+                    <li><a class="link" href="#showcase" data-type="not_selectable">Projetos</a></li>
+                    <li><a class="link" href="#portfolio" data-type="not_selectable">Portfólio</a></li>
+                    <li><a class="link" href="#about" data-type="not_selectable">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="scrollable_wrapper">
+        <section id="hero">
+            <p class="upper_phrase" data-type="not_selectable">Procurando por um...</p>
+            <p class="animated_phrase" data-type="not_selectable">
+                <span class="animated_words"></span><span class="animated_cursor">|</span>
+            </p>
+            <a href="#contacts" class="link lower_phrase" data-type="not_selectable">Então clica aqui<br />e vamos conversar!</a>
+            <div class="scrolldown_btn">
+                <button class="" type="button" data-type="not_selectable">'Scrolla' para baixo!</button>
+            </div>
+        </section>
+        <main class="main_container">
+            <section id="showcase">
+                <div class="sections_h1">
+                    <h1 data-type="not_selectable">Projetos</h1>
+                </div>
+                <div class="showcase_filter">
+                    <button class="enabled" data-filter="all" type="button" data-type="not_selectable">Tudo</button>
+                    <button class="disabled" data-filter="video" type="button" data-type="not_selectable">Video</button>
+                    <button class="disabled" data-filter="design" type="button" data-type="not_selectable">Design</button>
+                    <button class="disabled" data-filter="3d" type="button" data-type="not_selectable">3D</button>
+                </div>
+                <div class="overscroll_y_wrapper showcase_grid">
+                    <div class="showcase_item" data-filter="all video design 3d">
+                        <img data-url="projetos/ccav/" src="../assets/images/showcase/ccav.webp">
+                    </div>
+                    <div class="showcase_item" data-filter="all video 3d">
+                        <img data-url="projetos/soberanas/" src="../assets/images/showcase/soberanas.webp">
+                    </div>
+                    <div class="showcase_item" data-filter="all design">
+                        <img data-url="projetos/acolhe/" src="../assets/images/showcase/acolhe.webp">
+                    </div>
+                    <div class="showcase_item" data-filter="all design">
+                        <img data-url="projetos/shana_uhlmann/" src="../assets/images/showcase/shana.webp">
+                    </div>
+                    <div class="showcase_item" data-filter="all video design">
+                        <img data-url="projetos/mateando/" src="../assets/images/showcase/mateando.webp">
+                    </div>
+                    <div class="showcase_item" data-filter="all design">
+                        <img data-url="projetos/quem_disse/" src="../assets/images/showcase/quemdisse.webp">
+                    </div>
+                    <div class="showcase_item" data-filter="all 3d">
+                        <img data-url="projetos/carnaval/" src="../assets/images/showcase/carnaval.webp">
+                    </div>
+                </div>
+            </section>
+            <section id="portfolio">
+                <div class="sections_h1">
+                    <h1 data-type="not_selectable">Portfólio</h1>
+                </div>
+                <div class="portfolio_col_filter">
+                    <button class="enabled" data-filter="1col" type="button" data-type="not_selectable">
+                        <svg class="portfolio_icons">
+                            <use xlink:href="./assets/sprites.svg#1col" href="../assets/sprites.svg#1col"></use>
+                        </svg>
+                    </button>
+                    <button class="disabled" data-filter="2col" type="button" data-type="not_selectable">
+                        <svg class="portfolio_icons">
+                            <use xlink:href="./assets/sprites.svg#2col" href="../assets/sprites.svg#2col"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div class="overscroll_y_wrapper media_holder">
+                    <div class="portfolio_grid portfolio_1col">
+                        <div class="portfolio_item rect16-9">
+                            <img src="../assets/images/portfolio/16-9.webp" alt="">
+                        </div>
+                        <div class="portfolio_item rect4-3">
+                            <img src="../assets/images/portfolio/4-3.webp" alt="">
+                        </div>
+                        <div class="portfolio_item square">
+                            <img src="../assets/images/portfolio/square.webp" alt="">
+                        </div>
+                        <div class="portfolio_item rect9-16">
+                            <img src="../assets/images/portfolio/9-16.webp" alt="">
+                        </div>
+                        <div class="portfolio_item rect16-9">
+                            <img src="../assets/images/portfolio/16-9.webp" alt="">
+                        </div>
+                        <div class="portfolio_item rect16-9">
+                            <img src="../assets/images/portfolio/16-9.webp" alt="">
+                        </div>
+                        <div class="portfolio_item rect4-3">
+                            <img src="../assets/images/portfolio/4-3.webp" alt="">
+                        </div>
+                        <div class="portfolio_item square">
+                            <img src="../assets/images/portfolio/square.webp" alt="">
+                        </div>
+                        <div class="portfolio_item square">
+                            <img src="../assets/images/portfolio/square.webp" alt="">
+                        </div>
+                        <div class="portfolio_item rect16-9">
+                            <img src="../assets/images/portfolio/16-9.webp" alt="">
+                        </div>
+                        <div class="portfolio_item rect16-9">
+                            <img src="../assets/images/portfolio/16-9.webp" alt="">
+                        </div>
+                        <div class="portfolio_item rect16-9">
+                            <img src="../assets/images/portfolio/16-9.webp" alt="">
+                        </div>
+                        <div class="portfolio_item square">
+                            <img src="../assets/images/portfolio/square.webp" alt="">
+                        </div>
+                        <div class="portfolio_item square">
+                            <img src="../assets/images/portfolio/square.webp" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="about">
+                <div class="sections_h1">
+                    <h1 data-type="not_selectable">Sobre mim</h1>
+                </div>
+                <div class="overscroll_y_wrapper about_wrapper">
+                    <div class="about_grid">
+                        <div class="about_item about_item1">
+                            <svg class="clip-paths">
+                                <clipPath id="about1" clipPathUnits="objectBoundingBox">
+                                    <rect id="about_rect1" x="0" y="0" width="1" height="1" />
+                                </clipPath>
+                            </svg>
+                            <img class="about_img" src="../assets/images/about/about1.webp" />
+                        </div>
+                        <div class="about_text_item about_text1">
+                            <p>Eu me chamo <strong>Rafael Agnes</strong></p>
+                        </div>
+                        <div class="about_item about_item2">
+                            <svg class="clip-paths">
+                                <clipPath id="about2" clipPathUnits="objectBoundingBox">
+                                    <rect id="about_rect2" x="0" y="0" width="1" height="1" />
+                                </clipPath>
+                            </svg>
+                            <img class="about_img" src="../assets/images/about/about2.webp" />
+                        </div>
+                        <div class="about_text_item about_text2">
+                            <p>Tenho <strong>22 anos</strong></p>
+                        </div>
+                        <div class="about_item about_item3">
+                            <svg class="clip-paths">
+                                <clipPath id="about3" clipPathUnits="objectBoundingBox">
+                                    <rect id="about_rect3" x="0" y="0" width="1" height="1" />
+                                </clipPath>
+                            </svg>
+                            <img class="about_img" src="../assets/images/about/about3.webp" />
+                        </div>
+                        <div class="about_text_item about_text3">
+                            <p>Sou um<br /><strong>'designer multitarefa'</strong></p>
+                        </div>
+                    </div>
+                    <div class="paragraph_wrapper about_paragraph_wrapper">
+                        <p>
+                            Por onde eu começo?...<br />Bem, eu passo mais tempo criando do
+                            que explicando o que crio. Sou do tipo que precisa de um podcast
+                            ou de uma boa música pra focar (às vezes tocar a mesma música
+                            até enjoar). Meu vício? Refinar detalhes até eles me convencerem
+                            de que estão bons o suficiente (às vezes ajustando algo que só
+                            eu vou notar). Enquanto alguns usam o termo "perfeccionista", eu
+                            prefiro o termo "chato".<br /><br />Em minhas horas vagas, curto
+                            jogos que me façam perder horas em mundos gigantes, e talvez por
+                            isso eu goste de misturar narrativas com os projetos que faço.
+                            Várias das minhas inspirações vêm de lugares aleatórios: um
+                            álbum novo que estou escutando, um jogo diferente que joguei ou
+                            até uma série que estou assistindo. No fundo, acho que criação é
+                            isso: pegar a bagunça da cabeça e dar forma a ela, seja num
+                            design, num modelo 3D ou num projeto que ainda não sei
+                            nomear.<br /><br />Este portfólio é meu cantinho pra mostrar que
+                            a perfeição tá superestimada&nbsp;— Aceito críticas (mas também
+                            não fico quieto). Espero que curta meu trabalho e, se tiver
+                            interesse, me chama!
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section id="professional">
+                <div class="sections_h1">
+                    <h1 data-type="not_selectable">Experiência</h1>
+                </div>
+                <div class="overscroll_x_wrapper timeline_wrapper">
+                    <div class="tl_item">
+                        <div class="tl_line" data-position="first"></div>
+                        <div class="tl_icon_wrapper">
+                            <svg class="tl_icon">
+                                <use xlink:href="./assets/sprites.svg#1col" href="../assets/sprites.svg#1col"></use>
+                            </svg>
+                        </div>
+                        <div class="tl_card">
+                            <div class="tl_date">
+                                <p>MM/YYYY</p><p>MM/YYYY</p>
+                            </div>
+                            <div class="tl_title">
+                                <p>Cargo que eu ocupei</p><p>EMPRESA QUE EU TRABALHEI</p>
+                            </div>
+                            <div class="tl_separator"></div>
+                            <div class="overscroll_y_wrapper tl_paragraph">
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, </p>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tl_item">
+                        <div class="tl_line"></div>
+                        <div class="tl_icon_wrapper">
+                            <svg class="tl_icon">
+                                <use xlink:href="./assets/sprites.svg#1col" href="../assets/sprites.svg#1col"></use>
+                            </svg>
+                        </div>
+                        <div class="tl_card">
+                            <div class="tl_date">
+                                <p>MM/YYYY</p><p>MM/YYYY</p>
+                            </div>
+                            <div class="tl_title">
+                                <p>Cargo que eu ocupei</p><p>EMPRESA QUE EU TRABALHEI</p>
+                            </div>
+                            <div class="tl_separator"></div>
+                            <div class="overscroll_y_wrapper tl_paragraph">
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, </p>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tl_item">
+                        <div class="tl_line"></div>
+                        <div class="tl_icon_wrapper">
+                            <svg class="tl_icon">
+                                <use xlink:href="./assets/sprites.svg#1col" href="../assets/sprites.svg#1col"></use>
+                            </svg>
+                        </div>
+                        <div class="tl_card">
+                            <div class="tl_date">
+                                <p>MM/YYYY</p><p>MM/YYYY</p>
+                            </div>
+                            <div class="tl_title">
+                                <p>Cargo que eu ocupei</p><p>EMPRESA QUE EU TRABALHEI</p>
+                            </div>
+                            <div class="tl_separator"></div>
+                            <div class="overscroll_y_wrapper tl_paragraph">
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, </p>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tl_item">
+                        <div class="tl_line"></div>
+                        <div class="tl_icon_wrapper">
+                            <svg class="tl_icon">
+                                <use xlink:href="./assets/sprites.svg#1col" href="../assets/sprites.svg#1col"></use>
+                            </svg>
+                        </div>
+                        <div class="tl_card">
+                            <div class="tl_date">
+                                <p>MM/YYYY</p><p>MM/YYYY</p>
+                            </div>
+                            <div class="tl_title">
+                                <p>Cargo que eu ocupei</p><p>EMPRESA QUE EU TRABALHEI</p>
+                            </div>
+                            <div class="tl_separator"></div>
+                            <div class="overscroll_y_wrapper tl_paragraph">
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, </p>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tl_item">
+                        <div class="tl_line"></div>
+                        <div class="tl_icon_wrapper">
+                            <svg class="tl_icon">
+                                <use xlink:href="./assets/sprites.svg#1col" href="../assets/sprites.svg#1col"></use>
+                            </svg>
+                        </div>
+                        <div class="tl_card">
+                            <div class="tl_date">
+                                <p>MM/YYYY</p><p>MM/YYYY</p>
+                            </div>
+                            <div class="tl_title">
+                                <p>Cargo que eu ocupei</p><p>EMPRESA QUE EU TRABALHEI</p>
+                            </div>
+                            <div class="tl_separator"></div>
+                            <div class="overscroll_y_wrapper tl_paragraph">
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, </p>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tl_item">
+                        <div class="tl_line" data-position="last"></div>
+                        <div class="tl_icon_wrapper">
+                            <svg class="tl_icon">
+                                <use xlink:href="./assets/sprites.svg#1col" href="../assets/sprites.svg#1col"></use>
+                            </svg>
+                        </div>
+                        <div class="tl_card">
+                            <div class="tl_date">
+                                <p>MM/YYYY</p><p>MM/YYYY</p>
+                            </div>
+                            <div class="tl_title">
+                                <p>Cargo que eu ocupei</p><p>EMPRESA QUE EU TRABALHEI</p>
+                            </div>
+                            <div class="tl_separator"></div>
+                            <div class="overscroll_y_wrapper tl_paragraph">
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, </p>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="skills">
+                <div class="sections_h1">
+                    <h1 data-type="not_selectable">Habilidades</h1>
+                </div>
+            </section>
+            <section id="contacts">
+            </section>
+        </main>
+        <aside id="instagram">
+        </aside>
+        <footer>
+        </footer>
+    </div>
+    <script src="../assets/scripts/gsap/gsap.min.js"></script>
+    <script src="../assets/scripts/gsap/SplitText.min.js"></script>
+    <script src="../assets/scripts/gsap/TextPlugin.min.js"></script>
+    <script src="../assets/scripts/gsap/MorphSVGPlugin.min.js"></script>
+    <script src="../assets/scripts/gsap/ScrollTrigger.min.js"></script>
+    <script src="../assets/scripts/gsap/ScrollSmoother.min.js"></script>
+
+    <script type="module" src="../assets/scripts/main.js"></script>
+    <script type="module" src="../assets/scripts/index.js"></script>
+    <script type="module" src="../assets/scripts/bgcanvas.js"></script>
+</body>
+
+</html>
