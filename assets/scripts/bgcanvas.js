@@ -11,22 +11,18 @@ function parseRGB(cssValue) {
 window.addEventListener("load", () => {
   // get color css variables
   const root = document.documentElement;
-  const cssColorD1 = getComputedStyle(root).getPropertyValue("--color-dark1");
-  const colorDark1 = parseRGB(cssColorD1);
-  const cssColorD2 = getComputedStyle(root).getPropertyValue("--color-dark2");
-  const colorDark2 = parseRGB(cssColorD2);
-  const cssColorD3 = getComputedStyle(root).getPropertyValue("--color-dark3");
-  const colorDark3 = parseRGB(cssColorD3);
-  const cssColorL1 = getComputedStyle(root).getPropertyValue("--color-light1");
-  const colorLight1 = parseRGB(cssColorL1);
-  const cssColorL2 = getComputedStyle(root).getPropertyValue("--color-light2");
-  const colorLight2 = parseRGB(cssColorL2);
+  const bgColor1 = parseRGB(getComputedStyle(root).getPropertyValue("--bg-color1"));
+  const bgColor2 = parseRGB(getComputedStyle(root).getPropertyValue("--bg-color2"));
+  const bgColor3 = parseRGB(getComputedStyle(root).getPropertyValue("--bg-color3"));
+  const bgColor4 = parseRGB(getComputedStyle(root).getPropertyValue("--bg-color4"));
+  const bgColor5 = parseRGB(getComputedStyle(root).getPropertyValue("--bg-color5"));
+  const bgColor6 = parseRGB(getComputedStyle(root).getPropertyValue("--bg-color6"));
 
   const canvas = document.getElementsByClassName("bg_canvas")[0];
   const c = canvas.getContext("2d");
 
   // size of canvas
-  const imgSize = 400;
+  const imgSize = 250;
 
   canvas.width = imgSize;
   canvas.height = imgSize;
@@ -41,7 +37,7 @@ window.addEventListener("load", () => {
   }
 
   // size of our height maps
-  const mapSize = 800;
+  const mapSize = 500;
 
   // returns the distance of point x,y from the origin 0,0
   const distance = (x, y) => Math.sqrt(x * x + y * y);
@@ -63,7 +59,7 @@ window.addEventListener("load", () => {
       const d = distance(cx, cy);
 
       // stretching so we get the desired ripple density on our map
-      const stretch = (3 * Math.PI) / (mapSize / 2);
+      const stretch = (2 * Math.PI) / (mapSize / 2);
 
       // wavy height value between -1 and 1
       const ripple = Math.sin(d * stretch);
@@ -80,13 +76,13 @@ window.addEventListener("load", () => {
   for (let u = 0; u < mapSize; u++) {
     for (let v = 0; v < mapSize; v++) {
       const i = u * mapSize + v;
-      const cx = u - mapSize / 2;
+      const cx = u - mapSize / 1;
       const cy = v - mapSize / 2;
 
       // skewed distance as input to chaos field calculation,
       // scaled for smoothness over map distance
-      const d1 = distance(0.8 * cx, 1.3 * cy) * 0.022;
-      const d2 = distance(1.35 * cx, 0.45 * cy) * 0.022;
+      const d1 = distance(0.05 * cx, 0.05 * cy) * 0.005;
+      const d2 = distance(0.05 * cx, 0.09 * cy) * 5;
 
       const s = Math.sin(d1);
       const c = Math.cos(d2);
@@ -111,11 +107,11 @@ window.addEventListener("load", () => {
   };
 
   const makePalette = () => {
-    const c1 = colorDark1;
-    const c2 = colorDark2;
-    const c3 = colorDark3;
-    const c4 = colorLight1;
-    const c5 = colorLight2;
+    const c1 = bgColor1;
+    const c2 = bgColor2;
+    const c3 = bgColor3;
+    const c4 = bgColor4;
+    const c5 = bgColor5;
 
     return makeFiveColorGradient(c1, c2, c3, c4, c5);
   };
@@ -156,12 +152,12 @@ window.addEventListener("load", () => {
   // adjust height maps offsets
   const moveHeightMaps = (t) => {
     dx1 = Math.floor(
-      (((Math.cos(t * 0.0002 + 0.4 + Math.PI) + 1) / 2) * mapSize) / 2
+      (((Math.cos(t * 0.0002 + 0.3 + Math.PI) + 1) / 2) * mapSize) / 2
     );
-    dy1 = Math.floor((((Math.cos(t * 0.0003 - 0.1) + 1) / 2) * mapSize) / 2);
-    dx2 = Math.floor((((Math.cos(t * -0.0002 + 1.2) + 1) / 2) * mapSize) / 2);
+    dy1 = Math.floor((((Math.cos(t * 0.0005 - 0.1) + 1) / 2) * mapSize) / 2);
+    dx2 = Math.floor((((Math.cos(t * -0.0001 + 0.1) + 1) / 2) * mapSize) / 2);
     dy2 = Math.floor(
-      (((Math.cos(t * -0.0003 - 0.8 + Math.PI) + 1) / 2) * mapSize) / 2
+      (((Math.cos(t * -0.0002 - 5 + Math.PI) + 1) / 2) * mapSize) / 2
     );
   };
 

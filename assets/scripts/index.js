@@ -54,25 +54,20 @@ function applyPortfolioFilters(activeFilter) {
   }
 }
 
+// tweak mask for overscrolled divs based on left position and width
+function fadesOnOverscrollXWrapper(visibleWrapper) {
+  visibleWrapper.addEventListener("scroll", () => {
+    const left = visibleWrapper.scrollLeft <= 0;
+    const tolerance = visibleWrapper.scrollWidth * 0.025;
+    const right =
+      visibleWrapper.scrollLeft + visibleWrapper.clientWidth >=
+      visibleWrapper.scrollWidth - tolerance;
+    visibleWrapper.classList.toggle("scrolling", !left && !right);
+    visibleWrapper.classList.toggle("bottom", right);
+  });
+}
+
 // #region ANIM-PRECONFIG
-/* let heroWords = [
-  "Video Editor?",
-  "Motion Designer?",
-  "Graphic Designer?",
-  "Branding Designer?",
-  "Web Designer?",
-  "3D Designer?"
-]; */
-
-let heroWords = [
-  "Editor de Vídeo?",
-  "Animador Gráfico?",
-  "Designer Gráfico?",
-  "Designer de Marca?",
-  "Designer de Sites?",
-  "Designer 3D?",
-];
-
 let customPath1 =
   "M0.751,0.015 c-0.013,0.007,-0.026,0.016,-0.039,0.025 c-0.089,0.038,-0.213,0.042,-0.255,0.142 c-0.025,0.053,-0.027,0.126,-0.083,0.157 c-0.11,0.042,-0.177,-0.018,-0.24,0.116 c-0.031,0.034,-0.059,0.029,-0.074,0.084 C0.039,0.641,0.016,0.743,0,0.846 c0,0.193,0.279,0.141,0.408,0.154 c0.079,0.002,0.153,-0.027,0.23,-0.036 c0.318,0.034,0.402,-0.059,0.345,-0.376 c-0.029,-0.153,-0.01,-0.304,0.003,-0.457 C0.973,0.017,0.912,0.007,0.819,0.001 c-0.024,-0.002,-0.047,0.003,-0.069,0.014",
   customPath2 =
@@ -96,37 +91,64 @@ let path1_preCompiled = [
 
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(SplitText, TextPlugin, MorphSVGPlugin, ScrollTrigger, ScrollSmoother);
-  
+
   // #region Animate Hero Elements
+
+  let heroWords;
+  switch (document.getElementsByClassName("anim_words")[0].dataset.language) {
+    case "pt-BR":
+      heroWords = [
+        "Editor de Vídeo?",
+        "Animador Gráfico?",
+        "Designer Gráfico?",
+        "Designer de Marca?",
+        "Designer de Sites?",
+        "Designer 3D?",
+      ];
+      break;
+    case "en-US":
+      heroWords = [
+        "Video Editor?",
+        "Motion Designer?",
+        "Graphic Designer?",
+        "Branding Designer?",
+        "Web Designer?",
+        "3D Designer?"
+      ];
+      break;
+  }
+
   let heroMaxTl = gsap.timeline({paused: true, repeat: -1});
   
   let heroCursorTl = gsap.timeline();
-  heroCursorTl.to(".animated_cursor", {
+  heroCursorTl.to(".anim_cursor", {
     opacity: 0,
     duration: 0.5,
     repeat: -1,
     yoyo: true,
     ease: "power3.inOut"
-  }, 0)
+  }, 0);
   
   let heroWordsTl = gsap.timeline({repeat: -1});
   heroWords.forEach((word) => {
-    let heroWordTl = gsap.timeline({ repeat: 1, yoyo: true, repeatDelay: 2.5 });
-    heroWordTl.to(".animated_words", {
+    let heroWordTl = gsap.timeline({repeat: 1, yoyo: true, repeatDelay: 1});
+    heroWordTl.to(".anim_words", {
       duration: 2.5,
       text: word,
       ease: "power2.inOut"
-    });
-    heroWordTl.to(".lower_phrase", {
-      opacity: 1,
-        y: "55%",
-        duration: 0.5,
-        ease: "none"
     });
     heroWordsTl.add(heroWordTl);
     heroMaxTl.add(heroCursorTl, 0);
     heroMaxTl.add(heroWordsTl, 0);
   });
+
+  heroMaxTl.to(".cta_wrapper", {
+    y: "-5%",
+    duration: 2,
+    repeat: -1,
+    yoyo: true,
+    ease: "power1.inOut"
+  }, 0);
 
   ScrollTrigger.create({
     trigger: "#hero",
@@ -140,25 +162,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // #region Animate About Grid Img (clip-paths)
   MorphSVGPlugin.convertToPath("#about_rect1, #about_rect2, #about_rect3");
-  const aboutImg1 = document.getElementsByClassName("about_img")[0],
-    aboutImg2 = document.getElementsByClassName("about_img")[1],
-    aboutImg3 = document.getElementsByClassName("about_img")[2];
-
   let aboutGridTl = gsap.timeline({paused: true, repeat: -1});
 
-  let aboutImagesTl = gsap.timeline({ repeat: 1, yoyo: true, repeatDelay: 1 });
-  aboutImagesTl.to("#about_rect1", 0.5, {
-      morphSVG: { shape: customPath1, shapeIndex: [-12], type: "linear", precompile: path1_preCompiled },
-      delay: 1, ease: "Power1.inOut"
-    });
-    aboutImagesTl.to("#about_rect2", 0.5, {
-      morphSVG: { shape: customPath2, shapeIndex: [-2], type: "linear", precompile: path2_preCompiled },
-      delay: 1, ease: "Power1.inOut"
-    });
-    aboutImagesTl.to("#about_rect3", 0.5, {
-      morphSVG: { shape: customPath3, shapeIndex: [18], type: "linear", precompile: path3_preCompiled },
-      delay: 1, ease: "Power1.inOut"
-    });
+  let aboutImagesTl = gsap.timeline({ repeat: 1, yoyo: true, repeatDelay: 2 });
+  aboutImagesTl.to("#about_rect1", 0.8, {
+    morphSVG: { shape: customPath1, shapeIndex: [-12], type: "linear", precompile: path1_preCompiled },
+    delay: 1, ease: "Power1.inOut"
+  }, 0);
+  aboutImagesTl.to(document.getElementsByClassName("img_opacity")[0], 0.8, {
+    opacity: 0, delay: 1, ease: "Power1.inOut"
+  }, 0)
+  aboutImagesTl.to("#about_rect2", 0.8, {
+    morphSVG: { shape: customPath2, shapeIndex: [-2], type: "linear", precompile: path2_preCompiled },
+    delay: 1, ease: "Power1.inOut"
+  }, 1);
+  aboutImagesTl.to(document.getElementsByClassName("img_opacity")[1], 0.8, {
+    opacity: 0, delay: 1, ease: "Power1.inOut"
+  }, 1)
+  aboutImagesTl.to("#about_rect3", 0.8, {
+    morphSVG: { shape: customPath3, shapeIndex: [18], type: "linear", precompile: path3_preCompiled },
+    delay: 1, ease: "Power1.inOut"
+  }, 2);
+  aboutImagesTl.to(document.getElementsByClassName("img_opacity")[2], 0.8, {
+    opacity: 0, delay: 1, ease: "Power1.inOut"
+  }, 2)
 
   aboutGridTl.add(aboutImagesTl);
 
@@ -173,10 +200,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // #endregion
 
   // #region Animate Experience Cards
-  function animateTlCards (item) {
+  const lottieAnimations = [];
+
+  function animateTlCards (item, id) {
     let timeline = gsap.timeline();
     timeline.fromTo(item.querySelector(".tl_icon_wrapper"), {opacity: 0, scale: 0}, {duration: 0.5, opacity: 1, scale: 1}, 0);
-    timeline.fromTo(item.querySelector(".tl_icon"), {scale: 1.5}, {duration: 1.2, scale: 1}, 0);
+    timeline.add( function() {lottieAnimations[id].goToAndPlay(0, true);});
     timeline.fromTo(item.querySelector(".tl_date"), {opacity: 0}, {duration: 1, opacity: 1}, 0);
     timeline.fromTo(item.querySelector(".tl_title"), {opacity: 0}, {duration: 1, opacity: 1}, 0);
     timeline.fromTo(item.querySelector(".tl_paragraph"), {opacity: 0}, {duration: 1, opacity: 1}, 0);
@@ -184,35 +213,65 @@ document.addEventListener("DOMContentLoaded", () => {
     return timeline;
   }
 
-  document.querySelectorAll(".tl_item").forEach(item => {
+  document.querySelectorAll(".tl_item").forEach((item, id) => {
+    const lottieAnimation = lottie.loadAnimation({
+      container: item.querySelector(".tl_icon"),
+      renderer: "svg",
+      loop: false,
+      autoplay: false,
+      path: item.querySelector(".tl_icon").dataset.path
+    });
+
+    lottieAnimations.push(lottieAnimation);
+
+    ScrollTrigger.create({
+      trigger: item,
+      scroller: ".scrollable_wrapper",
+      start: "top bottom",
+      end: "bottom top",
+      animation: animateTlCards(item, id),
+      toggleActions: "restart reset restart reset",
+      onEnter: fadesOnOverscrollXWrapper(document.getElementsByClassName("overscroll_x_wrapper")[0]),
+    });
+
     ScrollTrigger.create({
       trigger: item,
       horizontal: true,
       scroller: ".timeline_wrapper",
       start: "left center+=100",
       end: "right center-=100",
-      animation: animateTlCards(item),
-      toggleActions: "restart reset restart reset"
-    });
-  });
-
-  document.querySelectorAll(".tl_item").forEach(item => {
-    ScrollTrigger.create({
-      trigger: item,
-      scroller: ".scrollable_wrapper",
-      start: "top bottom",
-      end: "bottom top",
-      animation: animateTlCards(item),
+      animation: animateTlCards(item, id),
       toggleActions: "restart reset restart reset",
     });
   });
+
+  // #endregion
+
+  // #region Animate Skills
+
+  let SkillsMaxTl = gsap.timeline({paused: true, repeat: -1});
+
+  document.querySelectorAll(".inner_bar svg").forEach(svg => {
+    const svgHeight = svg.getBoundingClientRect().height;
+    SkillsMaxTl.fromTo(svg, {y: 0}, {duration: 3.5, y: -(svgHeight /2), ease: "none"}, 0);
+  });
+
+  ScrollTrigger.create({
+    trigger: "#skills",
+    scroller: ".scrollable_wrapper",
+    start: "top bottom",
+    end: "bottom top",
+    animation: SkillsMaxTl,
+    toggleActions: "play pause play pause",
+  });
+
   // #endregion
 
   // open hidden menu when clicked on dropdown button
   document
     .getElementsByClassName("header_dropdown_btn")[0]
     .addEventListener("click", () => {
-      toggleClass("class", "header_btn_wrapper", "toggled");
+      toggleClass("class", "header_btns_wrapper", "toggled");
       toggleClass("class", "header_hidden_menu", "toggled");
       toggleClass("class", "arrow_down_icon", "toggled");
       document
@@ -226,10 +285,10 @@ document.addEventListener("DOMContentLoaded", () => {
   scrollableWrapper.onscroll = () => {
     if (scrollableWrapper.scrollTop > 0) {
       addClass("class", "header_wrapper", "floating");
-      addClass("class", "header_btn_wrapper", "floating_header");
+      addClass("class", "header_btns_wrapper", "floating_header");
     } else {
       removeClass("class", "header_wrapper", "floating");
-      removeClass("class", "header_btn_wrapper", "floating_header");
+      removeClass("class", "header_btns_wrapper", "floating_header");
     }
   };
 
@@ -248,10 +307,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // #region Buttons, Showcase href, Portfolio columns
   document.getElementsByClassName("header_btns")[0].onclick = () => {
     document.getElementById("contacts").scrollIntoView({behavior: "smooth"});
-  }
-
-  document.querySelector(".scrolldown_btn > button").onclick = () => {
-    document.getElementById("showcase").scrollIntoView({behavior: "smooth"});
   }
 
   // change the filters on the showcase Section

@@ -18,20 +18,20 @@
     <div class="background bg_filter"></div>
     <header class="header_wrapper">
         <div class="header">
-            <h1><a class="link" href="#hero" data-type="not_selectable">Rafael Agnes</a></h1>
+            <a class="link" href="#hero" data-type="not_selectable"><mark>Rafael Agnes</mark></a>
             <nav class="header_nav">
                 <ul>
-                    <li><a class="link" href="#showcase" data-type="not_selectable">Projetos</a></li>
-                    <li><a class="link" href="#portfolio" data-type="not_selectable">Portfólio</a></li>
-                    <li><a class="link" href="#about" data-type="not_selectable">Sobre</a></li>
+                    <li><a class="link" href="#showcase" data-type="not_selectable"><mark>Projetos</mark></a></li>
+                    <li><a class="link" href="#portfolio" data-type="not_selectable"><mark>Portfólio</mark></a></li>
+                    <li><a class="link" href="#about" data-type="not_selectable"><mark>Sobre</mark></a></li>
                 </ul>
             </nav>
-            <div class="header_btn_wrapper">
-                <button class="header_btns" type="button" data-type="not_selectable">Contato</button>
+            <div class="header_btns_wrapper">
+                <button class="header_btns" type="button" data-type="not_selectable"><mark>Contato</mark></button>
+                <div></div>
                 <button class="header_btns header_dropdown_btn" type="button" data-type="not_selectable">
-                    <svg class="arrow_down_icon">
-                        <!-- import the symbol "arrow_down" from the sprites.svg file -->
-                        <use xlink:href="./assets/sprites.svg#arrow_down" href="../assets/sprites.svg#arrow_down"></use>
+                    <svg class="arrow_down_icon" viewBox="0 0 19.16 11.28">
+                        <use href="../assets/sprites.svg#arrow_down" xlink:href="./assets/sprites.svg#arrow_down"></use>
                     </svg>
                 </button>
             </div>
@@ -39,22 +39,28 @@
         <div class="header_hidden_menu">
             <nav class="hidden_menu_nav">
                 <ul>
-                    <li><a class="link" href="#showcase" data-type="not_selectable">Projetos</a></li>
-                    <li><a class="link" href="#portfolio" data-type="not_selectable">Portfólio</a></li>
-                    <li><a class="link" href="#about" data-type="not_selectable">Sobre</a></li>
+                    <li><a class="link" href="#showcase" data-type="not_selectable"><mark>Projetos</mark></a></li>
+                    <li><a class="link" href="#portfolio" data-type="not_selectable"><mark>Portfólio</mark></a></li>
+                    <li><a class="link" href="#about" data-type="not_selectable"><mark>Sobre</mark></a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <div class="scrollable_wrapper">
         <section id="hero">
-            <p class="upper_phrase" data-type="not_selectable">Procurando por um...</p>
-            <p class="animated_phrase" data-type="not_selectable">
-                <span class="animated_words"></span><span class="animated_cursor">|</span>
+            <p class="hero_phrase" data-type="not_selectable">Procurando por um...</p>
+            <p class="hero_animated_words" data-type="not_selectable">
+                <span class="anim_words" data-language="pt-BR"></span><span class="anim_cursor">|</span>
             </p>
-            <a href="#contacts" class="link lower_phrase" data-type="not_selectable">Então clica aqui<br />e vamos conversar!</a>
-            <div class="scrolldown_btn">
-                <button class="" type="button" data-type="not_selectable">'Scrolla' para baixo!</button>
+            <div class="dark_gradient"></div>
+            <div class="graphy_transition"></div>
+            <div class="cta_wrapper">
+                <p>Encontrou! Sou Rafael Agnes.</p>
+                <h1>O profissional ideal para <mark>projetos audiovisuais completos.</mark></h1>
+                <div class="cta">
+                    <a class="link" href="#contacts"><span>Clique aqui</span> e vamos tirar seu projeto do papel</a>
+                </div>
+                <a class="link" href="#showcase">Ainda em dúvida? Role para baixo e confira meu portfólio por conta própria.</a>
             </div>
         </section>
         <main class="main_container">
@@ -98,13 +104,13 @@
                 </div>
                 <div class="portfolio_col_filter">
                     <button class="enabled" data-filter="1col" type="button" data-type="not_selectable">
-                        <svg class="portfolio_icons">
-                            <use xlink:href="./assets/sprites.svg#1col" href="../assets/sprites.svg#1col"></use>
+                        <svg class="portfolio_icons" viewBox="0 0 18 18">
+                            <use href="../assets/sprites.svg#1col" xlink:href="./assets/sprites.svg#1col"></use>
                         </svg>
                     </button>
                     <button class="disabled" data-filter="2col" type="button" data-type="not_selectable">
-                        <svg class="portfolio_icons">
-                            <use xlink:href="./assets/sprites.svg#2col" href="../assets/sprites.svg#2col"></use>
+                        <svg class="portfolio_icons" viewBox="0 0 18 18">
+                            <use href="../assets/sprites.svg#2col" xlink:href="./assets/sprites.svg#2col"></use>
                         </svg>
                     </button>
                 </div>
@@ -167,10 +173,11 @@
                                     <rect id="about_rect1" x="0" y="0" width="1" height="1" />
                                 </clipPath>
                             </svg>
-                            <img class="about_img" src="../assets/images/about/about1.webp" />
+                            <img class="about_img img_opacity" src="../assets/images/about/about1.webp" />
+                            <img class="about_img" src="../assets/images/about/about1_blob.webp" />
                         </div>
                         <div class="about_text_item about_text1">
-                            <p>Eu me chamo <strong>Rafael Agnes</strong></p>
+                            <p>Eu me chamo <mark>Rafael Agnes</mark></p>
                         </div>
                         <div class="about_item about_item2">
                             <svg class="clip-paths">
@@ -178,10 +185,11 @@
                                     <rect id="about_rect2" x="0" y="0" width="1" height="1" />
                                 </clipPath>
                             </svg>
-                            <img class="about_img" src="../assets/images/about/about2.webp" />
+                            <img class="about_img img_opacity" src="../assets/images/about/about2.webp" />
+                            <img class="about_img" src="../assets/images/about/about2_blob.webp" />
                         </div>
                         <div class="about_text_item about_text2">
-                            <p>Tenho <strong>22 anos</strong></p>
+                            <p>Tenho <mark>22 anos</mark></p>
                         </div>
                         <div class="about_item about_item3">
                             <svg class="clip-paths">
@@ -189,33 +197,21 @@
                                     <rect id="about_rect3" x="0" y="0" width="1" height="1" />
                                 </clipPath>
                             </svg>
-                            <img class="about_img" src="../assets/images/about/about3.webp" />
+                            <img class="about_img img_opacity" src="../assets/images/about/about3.webp" />
+                            <img class="about_img" src="../assets/images/about/about3_blob.webp" />
                         </div>
                         <div class="about_text_item about_text3">
-                            <p>Sou um<br /><strong>'designer multitarefa'</strong></p>
+                            <p>Sou um<br /><mark>'designer multitarefa'</mark></p>
                         </div>
                     </div>
-                    <div class="paragraph_wrapper about_paragraph_wrapper">
-                        <p>
-                            Por onde eu começo?...<br />Bem, eu passo mais tempo criando do
-                            que explicando o que crio. Sou do tipo que precisa de um podcast
-                            ou de uma boa música pra focar (às vezes tocar a mesma música
-                            até enjoar). Meu vício? Refinar detalhes até eles me convencerem
-                            de que estão bons o suficiente (às vezes ajustando algo que só
-                            eu vou notar). Enquanto alguns usam o termo "perfeccionista", eu
-                            prefiro o termo "chato".<br /><br />Em minhas horas vagas, curto
-                            jogos que me façam perder horas em mundos gigantes, e talvez por
-                            isso eu goste de misturar narrativas com os projetos que faço.
-                            Várias das minhas inspirações vêm de lugares aleatórios: um
-                            álbum novo que estou escutando, um jogo diferente que joguei ou
-                            até uma série que estou assistindo. No fundo, acho que criação é
-                            isso: pegar a bagunça da cabeça e dar forma a ela, seja num
-                            design, num modelo 3D ou num projeto que ainda não sei
-                            nomear.<br /><br />Este portfólio é meu cantinho pra mostrar que
-                            a perfeição tá superestimada&nbsp;— Aceito críticas (mas também
-                            não fico quieto). Espero que curta meu trabalho e, se tiver
-                            interesse, me chama!
-                        </p>
+                    <div class="about_paragraph">
+                        <h3>Título</h3>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+                        <h4>Subtítulo</h4>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione</p>
+                        <div class="text_box">
+                            <p>Texto muito importante e por isso ele deverá ser destacado nessa box. Leia isso por favor!</p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -227,16 +223,15 @@
                     <div class="tl_item">
                         <div class="tl_line" data-position="first"></div>
                         <div class="tl_icon_wrapper">
-                            <svg class="tl_icon">
-                                <use xlink:href="./assets/sprites.svg#1col" href="../assets/sprites.svg#1col"></use>
-                            </svg>
+                            <div class="tl_icon" data-path="../assets/lotties/hospital.json">    
+                            </div>
                         </div>
                         <div class="tl_card">
                             <div class="tl_date">
                                 <p>MM/YYYY</p><p>MM/YYYY</p>
                             </div>
                             <div class="tl_title">
-                                <p>Cargo que eu ocupei</p><p>EMPRESA QUE EU TRABALHEI</p>
+                                <h3>Cargo que eu ocupei</h3><p>EMPRESA QUE EU TRABALHEI</p>
                             </div>
                             <div class="tl_separator"></div>
                             <div class="overscroll_y_wrapper tl_paragraph">
@@ -248,16 +243,16 @@
                     <div class="tl_item">
                         <div class="tl_line"></div>
                         <div class="tl_icon_wrapper">
-                            <svg class="tl_icon">
-                                <use xlink:href="./assets/sprites.svg#1col" href="../assets/sprites.svg#1col"></use>
-                            </svg>
+                            <div class="tl_icon" data-path="../assets/lotties/hospital.json">
+                                
+                            </div>
                         </div>
                         <div class="tl_card">
                             <div class="tl_date">
                                 <p>MM/YYYY</p><p>MM/YYYY</p>
                             </div>
                             <div class="tl_title">
-                                <p>Cargo que eu ocupei</p><p>EMPRESA QUE EU TRABALHEI</p>
+                                <h3>Cargo que eu ocupei</h3><p>EMPRESA QUE EU TRABALHEI</p>
                             </div>
                             <div class="tl_separator"></div>
                             <div class="overscroll_y_wrapper tl_paragraph">
@@ -269,16 +264,15 @@
                     <div class="tl_item">
                         <div class="tl_line"></div>
                         <div class="tl_icon_wrapper">
-                            <svg class="tl_icon">
-                                <use xlink:href="./assets/sprites.svg#1col" href="../assets/sprites.svg#1col"></use>
-                            </svg>
+                            <div class="tl_icon" data-path="../assets/lotties/hospital.json">    
+                            </div>
                         </div>
                         <div class="tl_card">
                             <div class="tl_date">
                                 <p>MM/YYYY</p><p>MM/YYYY</p>
                             </div>
                             <div class="tl_title">
-                                <p>Cargo que eu ocupei</p><p>EMPRESA QUE EU TRABALHEI</p>
+                                <h3>Cargo que eu ocupei</h3><p>EMPRESA QUE EU TRABALHEI</p>
                             </div>
                             <div class="tl_separator"></div>
                             <div class="overscroll_y_wrapper tl_paragraph">
@@ -290,16 +284,15 @@
                     <div class="tl_item">
                         <div class="tl_line"></div>
                         <div class="tl_icon_wrapper">
-                            <svg class="tl_icon">
-                                <use xlink:href="./assets/sprites.svg#1col" href="../assets/sprites.svg#1col"></use>
-                            </svg>
+                            <div class="tl_icon">    
+                            </div>
                         </div>
                         <div class="tl_card">
                             <div class="tl_date">
                                 <p>MM/YYYY</p><p>MM/YYYY</p>
                             </div>
                             <div class="tl_title">
-                                <p>Cargo que eu ocupei</p><p>EMPRESA QUE EU TRABALHEI</p>
+                                <h3>Cargo que eu ocupei</h3><p>EMPRESA QUE EU TRABALHEI</p>
                             </div>
                             <div class="tl_separator"></div>
                             <div class="overscroll_y_wrapper tl_paragraph">
@@ -311,37 +304,15 @@
                     <div class="tl_item">
                         <div class="tl_line"></div>
                         <div class="tl_icon_wrapper">
-                            <svg class="tl_icon">
-                                <use xlink:href="./assets/sprites.svg#1col" href="../assets/sprites.svg#1col"></use>
-                            </svg>
+                            <div class="tl_icon">    
+                            </div>
                         </div>
                         <div class="tl_card">
                             <div class="tl_date">
                                 <p>MM/YYYY</p><p>MM/YYYY</p>
                             </div>
                             <div class="tl_title">
-                                <p>Cargo que eu ocupei</p><p>EMPRESA QUE EU TRABALHEI</p>
-                            </div>
-                            <div class="tl_separator"></div>
-                            <div class="overscroll_y_wrapper tl_paragraph">
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, </p>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tl_item">
-                        <div class="tl_line" data-position="last"></div>
-                        <div class="tl_icon_wrapper">
-                            <svg class="tl_icon">
-                                <use xlink:href="./assets/sprites.svg#1col" href="../assets/sprites.svg#1col"></use>
-                            </svg>
-                        </div>
-                        <div class="tl_card">
-                            <div class="tl_date">
-                                <p>MM/YYYY</p><p>MM/YYYY</p>
-                            </div>
-                            <div class="tl_title">
-                                <p>Cargo que eu ocupei</p><p>EMPRESA QUE EU TRABALHEI</p>
+                                <h3>Cargo que eu ocupei</h3><p>EMPRESA QUE EU TRABALHEI</p>
                             </div>
                             <div class="tl_separator"></div>
                             <div class="overscroll_y_wrapper tl_paragraph">
@@ -355,6 +326,68 @@
             <section id="skills">
                 <div class="sections_h2">
                     <h2 data-type="not_selectable">Habilidades</h2>
+                </div>
+                <div class="skills_wrapper overscroll_y_wrapper">
+                    <div class="skill_item">
+                        <div class="skill_name"><p>Design Gráfico</p></div>
+                        <div class="skill_bar">
+                            <div class="inner_bar" data-skill="graphic_design">
+                                <svg viewBox="0 0 14 48">
+                                    <use href="../assets/sprites.svg#wave" xlink:href="./assets/sprites.svg#wave"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="skill_icon_row">
+                            <div class="skill_icon_grid">
+                                <svg></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill_item">
+                        <div class="skill_name"><p>Vídeo e Motion</p></div>
+                        <div class="skill_bar">
+                            <div class="inner_bar" data-skill="video_motion">
+                                <svg viewBox="0 0 14 48">
+                                    <use href="../assets/sprites.svg#wave" xlink:href="./assets/sprites.svg#wave"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="skill_icon_row">
+                            <div class="skill_icon_grid">
+                                <svg></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill_item">
+                        <div class="skill_name"><p>3D e Animação</p></div>
+                        <div class="skill_bar">
+                            <div class="inner_bar" data-skill="3d_animation">
+                                <svg viewBox="0 0 14 48">
+                                    <use href="../assets/sprites.svg#wave" xlink:href="./assets/sprites.svg#wave"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="skill_icon_row">
+                            <div class="skill_icon_grid">
+                                <svg></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill_item">
+                        <div class="skill_name"><p>Programação e Web</p></div>
+                        <div class="skill_bar">
+                            <div class="inner_bar" data-skill="web_development">
+                                <svg viewBox="0 0 14 48">
+                                    <use href="../assets/sprites.svg#wave" xlink:href="./assets/sprites.svg#wave"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="skill_icon_row">
+                            <div class="skill_icon_grid">
+                                <svg></svg>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
             <section id="contacts">
@@ -371,6 +404,7 @@
     <script src="../assets/scripts/gsap/MorphSVGPlugin.min.js"></script>
     <script src="../assets/scripts/gsap/ScrollTrigger.min.js"></script>
     <script src="../assets/scripts/gsap/ScrollSmoother.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.13.0/lottie_svg.min.js"></script>
 
     <script type="module" src="../assets/scripts/main.js"></script>
     <script type="module" src="../assets/scripts/index.js"></script>
