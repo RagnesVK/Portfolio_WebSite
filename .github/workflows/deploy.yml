@@ -23,7 +23,7 @@ jobs:
       - run: npm install -g html-minifier
 
       # Use CLI tools to minify, overwriting existing files
-      - run: for i in .assets/scripts/*.js; do terser $i --compress -o $i; done
+      - run: for i in ./assets/scripts/*.js; do terser $i --compress -o $i; done
       - run: for i in ./assets/css/*.css; do csso $i -o $i; done
       - run: |
           shopt -s globstar
