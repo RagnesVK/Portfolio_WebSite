@@ -205,7 +205,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function animateTlCards (item, id) {
     let timeline = gsap.timeline();
     timeline.fromTo(item.querySelector(".tl_icon_wrapper"), {opacity: 0, scale: 0}, {duration: 0.5, opacity: 1, scale: 1}, 0);
-    timeline.add( function() {lottieAnimations[id].goToAndPlay(0, true);});
+    timeline.fromTo(item.querySelector(".tl_icon"), {scale: 0.5}, {duration: 0.6, scale: 1, ease: "power1.inOut"}, 0.1);
+    timeline.add( function() {lottieAnimations[id].goToAndPlay(0, true);}, 0.4);
     timeline.fromTo(item.querySelector(".tl_date"), {opacity: 0}, {duration: 1, opacity: 1}, 0);
     timeline.fromTo(item.querySelector(".tl_title"), {opacity: 0}, {duration: 1, opacity: 1}, 0);
     timeline.fromTo(item.querySelector(".tl_paragraph"), {opacity: 0}, {duration: 1, opacity: 1}, 0);
