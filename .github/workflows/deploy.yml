@@ -24,7 +24,7 @@ jobs:
 
       # Use CLI tools to minify, overwriting existing files
       - run: for i in ./assets/scripts/*.js; do terser $i --compress -o $i; done
-      - run: for i in ./assets/css/*.css; do csso $i -o $i; done
+      - run: csso ./assets/css/styles.css -o ./assets/css/styles.css
       - run: |
           shopt -s globstar
           for i in ./pt-BR/**/index.html; do html-minifier --collapse-boolean-attributes --remove-empty-attributes --remove-tag-whitespace --collapse-whitespace --minify-css --minify-js --minify-urls --remove-comments $i -o $i; done
