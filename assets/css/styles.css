@@ -1,12 +1,5 @@
 /* #region ROOT */
 :root {
-
-  --bg-color1: rgba(14, 6, 20, 1);
-  --bg-color2: rgba(18, 13, 41, 1);
-  --bg-color3: rgba(35, 17, 71, 1);
-  --bg-color4: rgba(87, 60, 138, 1);
-  --bg-color5: rgba(136, 127, 194, 1);
-  
   --color-dark1: rgb(14, 6, 20);
   --color-dark2: rgb(25, 23, 28);
   --color-dark3: rgb(35, 17, 70);

@@ -1,4 +1,4 @@
-function parseRGB(cssValue) {
+/* function parseRGB(cssValue) {
   const match = cssValue.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*[\d.]+)?\)/);
   if (!match) return null;
   return {
@@ -6,17 +6,16 @@ function parseRGB(cssValue) {
     g: Number(match[2]),
     b: Number(match[3]),
   };
-}
+} */
 
 window.addEventListener("load", () => {
   // get color css variables
-  const root = document.documentElement;
+  /* const root = document.documentElement;
   const bgColor1 = parseRGB(getComputedStyle(root).getPropertyValue("--bg-color1"));
   const bgColor2 = parseRGB(getComputedStyle(root).getPropertyValue("--bg-color2"));
   const bgColor3 = parseRGB(getComputedStyle(root).getPropertyValue("--bg-color3"));
   const bgColor4 = parseRGB(getComputedStyle(root).getPropertyValue("--bg-color4"));
-  const bgColor5 = parseRGB(getComputedStyle(root).getPropertyValue("--bg-color5"));
-  const bgColor6 = parseRGB(getComputedStyle(root).getPropertyValue("--bg-color6"));
+  const bgColor5 = parseRGB(getComputedStyle(root).getPropertyValue("--bg-color5")); */
 
   const canvas = document.getElementsByClassName("bg_canvas")[0];
   const c = canvas.getContext("2d");
@@ -107,11 +106,11 @@ window.addEventListener("load", () => {
   };
 
   const makePalette = () => {
-    const c1 = bgColor1;
-    const c2 = bgColor2;
-    const c3 = bgColor3;
-    const c4 = bgColor4;
-    const c5 = bgColor5;
+    const c1 = {r: 14, g: 6, b: 20};
+    const c2 = {r: 18, g: 13, b: 41};
+    const c3 = {r: 35, g: 17, b: 71};
+    const c4 = {r: 87, g: 60, b: 138};
+    const c5 = {r: 136, g: 127, b: 194};
 
     return makeFiveColorGradient(c1, c2, c3, c4, c5);
   };
