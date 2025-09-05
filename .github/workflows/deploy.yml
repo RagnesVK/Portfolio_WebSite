@@ -1,40 +1,37 @@
-name: Deploy Pages Minified
+# A Github Action that minifies html/css/js and pushes it to a new branch
+name: deploy
+run-name: Minify JS/CSS/HTML [gh-pages branch]
 
+# Run on pushes to `main` branch
 on:
   push:
     branches:
-      - main
-  workflow_dispatch:
+      - 'main'
 
 jobs:
-  deploy:
+  checkout-minify-push:
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v3
+      
+      # Install CLI tools
+      - uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: '16'
+      - run: npm install -g terser
+      - run: npm install -g csso-cli
+      - run: npm install -g html-minifier
 
-      - name: Install minify
-        run: npm install -g minify
-
-      - name: Prepare dist folder
-        run: |
-          mkdir dist
-          rsync -av --exclude='dist' --exclude='.git' --exclude='node_modules' ./ dist/
-
-      - name: Minify HTML, CSS, JS
-        run: |
-          minify "dist/**/*.html" "dist/**/*.css" "dist/**/*.js" --replace
-
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
-        with:
-          artifact_name: dist
+      # Use CLI tools to minify, overwriting existing files
+      - run: for i in ./assets/scripts/*.js; do terser $i --compress -o $i; done
+      - run: for i in ./assets/css/*.css; do csso $i -o $i; done
+      - run: |
+          shopt -s globstar
+          for i in ./pt-BR/**/index.html; do html-minifier --collapse-boolean-attributes --remove-empty-attributes --remove-tag-whitespace --collapse-whitespace --minify-css --minify-js --minify-urls --remove-comments $i -o $i; done
+      
+      # Push changes to `gh-pages` branch
+      - run: |
+          git config user.name github-username
+          git config user.email github-username@user.noreply.github.com
+          git commit -am 'Automated minify of ${{ github.sha }}'
+          git push --force -u origin main:gh-pages
