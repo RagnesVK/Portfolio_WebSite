@@ -93,7 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(SplitText, TextPlugin, MorphSVGPlugin, ScrollTrigger, ScrollSmoother);
 
   // #region Animate Hero Elements
-
   let heroWords;
   switch (document.getElementsByClassName("anim_words")[0].dataset.language) {
     case "pt-BR":
@@ -245,7 +244,6 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleActions: "restart reset restart reset",
     });
   });
-
   // #endregion
 
   // #region Animate Skills
@@ -266,6 +264,26 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleActions: "play pause play pause",
   });
 
+  // #endregion
+
+  // #region Animate Contacts
+  function animateContactsTlMax () {
+    let contactsTlMax = gsap.timeline({paused: true, repeat: -1});
+    contactsTlMax.to("#frame", {rotate: "+=360", ease: "none", duration: 15, repeat: -1}, 0);
+    contactsTlMax.to("#frame", {skewX: "-7.5deg", skewY: "-7.5deg", ease: "none", duration: 10, yoyo: true, repeat: -1}, 0);
+    contactsTlMax.to("#frame", {y: "30%", ease: "none", duration: 15, yoyo: true, repeat: -1}, 0);
+    contactsTlMax.to("#pen", {y: "25%", ease: "none", duration: 2.5, yoyo: true, repeat: -1}, 0);
+    return contactsTlMax;
+  }
+
+
+  ScrollTrigger.create({
+    trigger: "#contacts",
+    scroller: ".scrollable_wrapper",
+    end: "bottom top",
+    animation: animateContactsTlMax(),
+    toggleActions: "restart reset restart reset"
+  });
   // #endregion
 
   // open hidden menu when clicked on dropdown button
